@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>China-Cameroon Digital Bridge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>China–Cameroon Digital Bridge</h1>
+        <p>Connecting Technology, Education and Innovation</p >
+    </header>
+
+    <nav>
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('solutions')">Digital Solutions</button>
+        <button onclick="showSection('about')">About Me</button>
+        <button onclick="showSection('contact')">Contact</button>
+    </nav>
+
+    <main>
+
+        <section id="home" class="content-section">
+            <h2>Welcome</h2>
+            <p>This platform presents digital cooperation opportunities between China and Cameroon.</p >
+        </section>
+
+        <section id="solutions" class="content-section" style="display:none;">
+            <h2>Digital Solutions</h2>
+
+            <button onclick="showSolution('ecommerce')">E-Commerce</button>
+            <button onclick="showSolution('education')">Online Education</button>
+            <button onclick="showSolution('business')">Small Business Tech</button>
+
+            <div id="solution-content">
+                <p>Select a solution to see details.</p >
+            </div>
+        </section>
+
+        <section id="about" class="content-section" style="display:none;">
+            <h2>About Me</h2>
+            <p>I am an international student from Cameroon studying Computer Application Technology in China.</p >
+            <p>My goal is to pursue a Bachelor degree in Computer Science and contribute to digital cooperation between China and Africa.</p >
+        </section>
+
+        <section id="contact" class="content-section" style="display:none;">
+    <h2>Contact</h2>
+    <p>Send us a message:</p >
+
+    <form onsubmit="submitForm(event)">
+        <input type="text" id="name" placeholder="Your Name" required><br><br>
+        <input type="email" id="email" placeholder="Your Email" required><br><br>
+        <textarea id="message" placeholder="Your Message" required></textarea><br><br>
+        <button type="submit">Send</button>
+    </form>
+
+    <p id="form-response"></p >
+</section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
