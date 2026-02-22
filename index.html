@@ -2,63 +2,470 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>China-Cameroon Digital Bridge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>China-Cameroon Digital Bridge | Lando Chaugang Bidias (兰多)</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <h1>China–Cameroon Digital Bridge</h1>
-        <p>Connecting Technology, Education and Innovation</p >
+        <div class="header-content">
+            <h1> China–Cameroon Digital Bridge</h1>
+            <p>Connecting Technology, Education and Innovation</p>
+            <p class="subtitle">By Lando Chaugang Bidias (兰多) | Computer Science Technology Student</p>
+            <p class="subtitle-cn">江苏农牧科技职业学院 · 计算机应用技术专业</p>
+        </div>
     </header>
 
     <nav>
-        <button onclick="showSection('home')">Home</button>
-        <button onclick="showSection('solutions')">Digital Solutions</button>
-        <button onclick="showSection('about')">About Me</button>
-        <button onclick="showSection('contact')">Contact</button>
+        <button onclick="showSection('home')" class="nav-btn active" id="home-btn">
+            <i class="fas fa-home"></i> 首页 Home
+        </button>
+        <button onclick="showSection('solutions')" class="nav-btn" id="solutions-btn">
+            <i class="fas fa-lightbulb"></i> 数字方案 Digital Solutions
+        </button>
+        <button onclick="showSection('journey')" class="nav-btn" id="journey-btn">
+            <i class="fas fa-road"></i> 我的旅程 My Journey
+        </button>
+        <button onclick="showSection('projects')" class="nav-btn" id="projects-btn">
+            <i class="fas fa-code"></i> 项目 Projects
+        </button>
+        <button onclick="showSection('about')" class="nav-btn" id="about-btn">
+            <i class="fas fa-user"></i> 关于我 About Me
+        </button>
+        <button onclick="showSection('contact')" class="nav-btn" id="contact-btn">
+            <i class="fas fa-envelope"></i> 联系 Contact
+        </button>
     </nav>
 
     <main>
 
+        <!-- HOME SECTION -->
         <section id="home" class="content-section">
-            <h2>Welcome</h2>
-            <p>This platform presents digital cooperation opportunities between China and Cameroon.</p >
-        </section>
+            <div class="welcome-banner">
+                <h2> 欢迎来到我的数字作品集 Welcome to My Digital Portfolio</h2>
+                <p class="intro-text">
+                    你好！我是<strong>兰多 (Lando Chaugang Bidias)</strong>，来自喀麦隆的留学生，
+                    目前就读于<strong>江苏农牧科技职业学院</strong>计算机应用技术专业。
+                </p>
+                <p class="intro-text">
+                    Hello! I am <strong>Lando (兰多)</strong> from Cameroon, currently studying 
+                    <strong>Computer Science Technology</strong> at <strong>Jiangsu Agri-animal 
+                    Husbandry Vocational College</strong> in Taizhou, Jiangsu Province.
+                </p>
+                <p class="intro-text">
+                    This platform showcases my vision for strengthening digital cooperation between 
+                    <strong>China</strong> and <strong>Cameroon</strong> through technology and innovation.
+                    As I prepare to pursue my Bachelor's degree, I aim to bridge the technological 
+                    gap between these two nations.
+                </p>
+            </div>
 
-        <section id="solutions" class="content-section" style="display:none;">
-            <h2>Digital Solutions</h2>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>3 Years</h3>
+                    <p>在中国学习<br>Studying in China</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-certificate"></i>
+                    <h3>HSK 3级</h3>
+                    <p>汉语水平<br>Chinese Proficiency</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>计算机科学</h3>
+                    <p>专业方向<br>Computer Science</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-globe-africa"></i>
+                    <h3>2 Countries</h3>
+                    <p>中喀合作<br>China-Cameroon</p>
+                </div>
+            </div>
 
-            <button onclick="showSolution('ecommerce')">E-Commerce</button>
-            <button onclick="showSolution('education')">Online Education</button>
-            <button onclick="showSolution('business')">Small Business Tech</button>
-
-            <div id="solution-content">
-                <p>Select a solution to see details.</p >
+            <div class="announcement-box">
+                <h3> Future Academic Goals | 未来学术目标</h3>
+                <p>
+                    I am preparing to pursue a <strong>Bachelor's degree in Computer Science, Information Technology, or E-Commerce</strong> 
+                    in China, beginning with advanced Chinese language preparation (HSK 4 level). My long-term goal is to build sustainable
+                    digital bridges between China and Cameroon through technology, innovation, and education.
+                </p>
+                <p>
+                    我正在准备在中国攻读<strong>计算机科学、信息技术或电子商务的学士学位</strong>首先进行高级汉语学习（HSK 4 级）。我的长期目标是通过技术、
+                    创新和教育，在中国与喀麦隆之间建立可持续的数字桥梁。
+                </p>
             </div>
         </section>
 
-        <section id="about" class="content-section" style="display:none;">
-            <h2>About Me</h2>
-            <p>I am an international student from Cameroon studying Computer Application Technology in China.</p >
-            <p>My goal is to pursue a Bachelor degree in Computer Science and contribute to digital cooperation between China and Africa.</p >
+        <!-- SOLUTIONS SECTION -->
+        <section id="solutions" class="content-section" style="display:none;">
+            <h2> 数字解决方案 Digital Solutions for Development</h2>
+            <p class="section-description">
+                探索创新的数字解决方案，通过中国的技术专长改变喀麦隆的经济。<br>
+                Explore innovative digital solutions that can transform Cameroon's economy 
+                through Chinese technological expertise.
+            </p>
+
+            <div class="solutions-buttons">
+                <button onclick="showSolution('ecommerce')" class="solution-btn">
+                    <i class="fas fa-shopping-cart"></i> 电子商务 E-Commerce
+                </button>
+                <button onclick="showSolution('education')" class="solution-btn">
+                    <i class="fas fa-book-open"></i> 在线教育 Online Education
+                </button>
+                <button onclick="showSolution('business')" class="solution-btn">
+                    <i class="fas fa-briefcase"></i> 小企业技术 Small Business Tech
+                </button>
+                <button onclick="showSolution('agriculture')" class="solution-btn">
+                    <i class="fas fa-leaf"></i> 智慧农业 Smart Agriculture
+                </button>
+            </div>
+
+            <div id="solution-content" class="solution-display">
+                <p class="placeholder-text">👆 点击上面的按钮查看详情 Click a solution above to see details</p>
+            </div>
         </section>
 
+        <!-- NEW: MY JOURNEY SECTION -->
+        <section id="journey" class="content-section" style="display:none;">
+            <h2> 我在中国的旅程 My Journey in China</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-plane-arrival"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>2023年10月 October 2023</h3>
+                        <h4>🇨🇳 抵达中国 Arrival in China</h4>
+                        <p>
+                            Began my journey at Jiangsu Agri-animal Husbandry Vocational College 
+                            in Taizhou, Jiangsu Province. Starting my Computer Science Technology 
+                            diploma program as an international student from Cameroon.
+                        </p>
+                        <p>开始在江苏省泰州市江苏农牧科技职业学院学习计算机应用技术专业。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>2025年 Year 2025</h3>
+                        <h4> 技术发展 Technical Development</h4>
+                        <p>
+                            Developed strong foundation in programming (HTML, CSS, JavaScript, Python), 
+                            web development, and database management. Created practical projects including 
+                            this China-Cameroon Digital Bridge portfolio website.
+                        </p>
+                        <p>在编程、网页开发和数据库管理方面打下了坚实的基础。创建了包括这个作品集网站在内的实际项目。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>2026年 Year 2026</h3>
+                        <h4> 语言学习 Language Learning</h4>
+                        <p>
+                            Achieved HSK 3 (Chinese proficiency level 3), demonstrating commitment 
+                            to cultural integration and ability to study in Chinese environment. 
+                            Continuing to improve my Chinese language skills.
+                        </p>
+                        <p>通过了HSK3级考试，展示了我融入中国文化的决心和在中文环境中学习的能力。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>2026年6月 June 2026</h3>
+                        <h4> 毕业与新开始 Graduation & New Beginning</h4>
+                        <p>
+                            About to complete a college diploma. Applying for the CSC to pursue
+                            Bachelor's degree in Computer Science, Information Technology, or 
+                            E-commerce with one year of language preparation.
+                            
+                        </p>
+                        <p>即将完成大专文凭。申请（CSC）以攻读计算机科学、信息技术或电子商务的学士学位，并进行一年的语言预备学习。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item future">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>2026-2030年 Year 2026-2030</h3>
+                        <h4> 本科学习 Bachelor's Studies</h4>
+                        <p>
+                            <strong>Goal:</strong> Complete one year of Chinese language preparation 
+                            (reaching HSK 4 level) followed by four years of Bachelor's degree studies 
+                            in Computer Science/IT/E-Commerce at a Jiangsu Province university.
+                        </p>
+                        <p><strong>目标：</strong>完成一年的汉语预科学习（达到HSK4水平），然后在江苏省的大学攻读四年的计算机科学/信息技术/电子商务本科学位。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="content-section" style="display:none;">
+            <h2> 我的学术和个人项目 My Academic & Personal Projects</h2>
+            <p class="section-description">
+                展示我的技术技能和对持续学习的承诺<br>
+                Showcasing my technical skills and commitment to continuous learning
+            </p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <i class="fas fa-globe project-icon"></i>
+                    <h3>China-Cameroon Digital Bridge<br>中喀数字桥梁</h3>
+                    <p>
+                        A responsive web platform exploring digital cooperation opportunities 
+                        between China and Cameroon. Features interactive sections on e-commerce, 
+                        education technology, and business solutions.
+                    </p>
+                    <p>探索中国和喀麦隆之间数字合作机会的响应式网络平台。</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <i class="fas fa-graduation-cap project-icon"></i>
+                    <h3>Academic Portfolio System<br>学术作品集系统</h3>
+                    <p>
+                        Developed during my studies at JSAHVC, demonstrating proficiency in 
+                        web development, user interface design, and bilingual content management 
+                        (Chinese-English).
+                    </p>
+                    <p>在江苏农牧科技职业学院学习期间开发，展示了我的网页开发和双语内容管理能力。</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Front-end Dev</span>
+                        <span class="tech-tag">UI/UX Design</span>
+                        <span class="tech-tag">Bilingual</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <i class="fas fa-chart-line project-icon"></i>
+                    <h3>Future Research Goal<br>未来研究目标</h3>
+                    <p>
+                        Planning to develop AI-powered educational tools and e-commerce platforms 
+                        that bridge digital divide between China and Africa, leveraging Chinese 
+                        technological innovations.
+                    </p>
+                    <p>计划开发人工智能驱动的教育工具和电子商务平台，弥合中国和非洲之间的数字鸿沟。</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">E-Commerce</span>
+                        <span class="tech-tag">EdTech</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <i class="fas fa-leaf project-icon"></i>
+                    <h3>Smart Agriculture Concept<br>智慧农业概念</h3>
+                    <p>
+                        Inspired by my studies at an agricultural college, exploring how IoT 
+                        and mobile technology can improve farming practices in Cameroon using 
+                        Chinese smart agriculture models.
+                    </p>
+                    <p>受农业学院学习启发，探索物联网和移动技术如何利用中国智慧农业模式改善喀麦隆的农业实践。</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">Mobile Apps</span>
+                        <span class="tech-tag">Agriculture Tech</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="content-section" style="display:none;">
+            <h2> 关于我 About Me</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>个人背景 My Background</h3>
+                    <p>
+                        <strong>姓名 Name:</strong> Lando Chaugang Bidias (兰多)<br>
+                        <strong>年龄 Age:</strong> 28 years old<br>
+                        <strong>国籍 Nationality:</strong> Cameroon 🇨🇲<br>
+                        <strong>当前学校 Current Institution:</strong> Jiangsu Agri-animal Husbandry Vocational College<br>
+                        <strong>专业 Major:</strong> Computer Science Technology (计算机应用技术)<br>
+                        <strong>汉语水平 Chinese Level:</strong> HSK 3 (pursuing HSK 4)
+                    </p>
+                    <p>
+                        I am currently in my final year at JSAHVC in Taizhou, Jiangsu Province. 
+                        My journey in China has been transformative, allowing me to experience 
+                        firsthand the country's remarkable technological advancement and educational excellence.
+                    </p>
+                    <p>
+                        我目前是江苏农牧科技职业学院的大三学生。我在中国的学习经历非常宝贵，
+                        让我亲身体验了中国在技术和教育方面的卓越成就。
+                    </p>
+
+                    <h3>我的愿景 My Vision</h3>
+                    <p>
+                        I believe technology is the bridge that can connect China and Africa for 
+                        mutual prosperity. By pursuing my Bachelor's degree in China, I aim to:
+                    </p>
+                    <ul class="vision-list">
+                        <li><i class="fas fa-check-circle"></i> 深化我的计算机科学专业知识 Deepen my computer science expertise</li>
+                        <li><i class="fas fa-check-circle"></i> 达到HSK4汉语水平 Achieve HSK 4 Chinese proficiency</li>
+                        <li><i class="fas fa-check-circle"></i> 学习中国的数字化转型模式 Learn China's digital transformation model</li>
+                        <li><i class="fas fa-check-circle"></i> 促进中喀技术合作 Foster China-Cameroon tech cooperation</li>
+                        <li><i class="fas fa-check-circle"></i> 为非洲的数字创新做出贡献 Contribute to African digital innovation</li>
+                    </ul>
+
+                    <h3>为什么选择江苏？Why Jiangsu Province?</h3>
+                    <p>
+                        Having studied in Jiangsu for nearly three years, I have deep appreciation 
+                        for the province's educational quality, technological innovation, and 
+                        international student support. Jiangsu is home to world-class universities 
+                        with strong Computer Science programs, making it the ideal location for 
+                        my Bachelor's studies.
+                    </p>
+                    <p>
+                        在江苏学习近三年，我深深感受到江苏省优质的教育、技术创新和对国际学生的支持。
+                        江苏拥有世界一流的大学和强大的计算机科学项目。
+                    </p>
+
+                    <h3>学术灵活性 Academic Flexibility</h3>
+                    <p>
+                        While my primary interest is in Computer Science, I am open to related fields 
+                        including <strong>Information Technology, Software Engineering, and E-Commerce</strong>. 
+                        My goal is to acquire comprehensive digital skills that bridge technology and business.
+                    </p>
+                </div>
+
+                <div class="skills-box">
+                    <h3>技术技能 Technical Skills</h3>
+                    <div class="skill-item">
+                        <span>HTML & CSS 网页设计</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>JavaScript 编程</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Python 开发</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>中文 Chinese (HSK3)</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Problem Solving 解决问题</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="language-box">
+                        <h4>语言能力 Languages</h4>
+                        <p>🇬🇧 English: Fluent</p>
+                        <p>🇨🇳 中文: HSK 3 (Intermediate)</p>
+                        <p>🇫🇷 Français: Native</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
         <section id="contact" class="content-section" style="display:none;">
-    <h2>Contact</h2>
-    <p>Send us a message:</p >
+            <h2> 联系方式 Get In Touch</h2>
+            <p class="section-description">
+                欢迎联系我，讨论合作、学术交流或机会<br>
+                Feel free to reach out for collaboration, academic exchange, or opportunities
+            </p>
 
-    <form onsubmit="submitForm(event)">
-        <input type="text" id="name" placeholder="Your Name" required><br><br>
-        <input type="email" id="email" placeholder="Your Email" required><br><br>
-        <textarea id="message" placeholder="Your Message" required></textarea><br><br>
-        <button type="submit">Send</button>
-    </form>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information 联系方式</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-user"></i>
+                        <div>
+                            <strong>Full Name 姓名</strong>
+                            <p>Lando Chaugang Bidias (兰多)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email 电子邮箱</strong>
+                            <p><a href="mailto:chaugangbidias@gmail.com">chaugangbidias@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone 电话</strong>
+                            <p><a href="tel:+8619708192857">+86 197 0819 2857</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <strong>Current Institution 当前学校</strong>
+                            <p>Jiangsu Agri-animal Husbandry Vocational College<br>江苏农牧科技职业学院</p>
+                            <p>Taizhou, Jiangsu Province 江苏省泰州市</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location 地点</strong>
+                            <p>🇨🇳 Currently in China (Jiangsu Province)</p>
+                            <p>🇨🇲 Originally from Cameroon</p>
+                        </div>
+                    </div>
+                </div>
 
-    <p id="form-response"></p >
-</section>
+                <div class="contact-form-container">
+                    <h3>发送消息 Send a Message</h3>
+                    <form onsubmit="submitForm(event)" id="contact-form">
+                        <input type="text" id="name" placeholder="Your Name 您的姓名" required>
+                        <input type="email" id="email" placeholder="Your Email 您的邮箱" required>
+                        <textarea id="message" placeholder="Your Message 您的留言" required></textarea>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> 发送 Send Message
+                        </button>
+                    </form>
+                    <p id="form-response" class="form-response"></p>
+                </div>
+            </div>
+        </section>
 
     </main>
+
+    <footer>
+        <p>&copy; 2026 Lando Chaugang Bidias (兰多) | Computer Science Portfolio</p>
+        <p>江苏农牧科技职业学院 | Jiangsu Agri-animal Husbandry Vocational College</p>
+        <p>A digital portfolio showcasing my commitment to China–Africa technological cooperation.</p>
+    </footer>
 
     <script src="script.js"></script>
 
