@@ -1,169 +1,183 @@
-// Message de bienvenue au chargement
-window.onload = function() {
-    alert("🌟 欢迎！Welcome to China-Cameroon Digital Bridge!\n\n由兰多（Lando Chaugang Bidias）创建\nCreated by Lando (兰多)");
-    // Activer le bouton Home par défaut
-    document.getElementById('home-btn').classList.add('active');
+/* ═══════════════════════════════════════════════
+   CHINA-CAMEROON DIGITAL BRIDGE
+   JavaScript — Lando Chaugang Bidias (兰多)
+   Version 4.0 — Updated March 2026
+═══════════════════════════════════════════════ */
+
+// ─── WELCOME ───
+window.onload = function () {
+    showSection('home');
 };
 
-// Fonction pour changer de section avec mise à jour des boutons actifs
-function showSection(sectionId) {
-    // Cacher toutes les sections
-    let sections = document.querySelectorAll(".content-section");
-    sections.forEach(function(section) {
-        section.style.display = "none";
+// ─── SECTION NAVIGATION ───
+function showSection(id) {
+    // Hide all sections
+    document.querySelectorAll('.content-section').forEach(s => {
+        s.style.display = 'none';
     });
+    // Remove active from all buttons
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
 
-    // Retirer la classe 'active' de tous les boutons
-    let buttons = document.querySelectorAll(".nav-btn");
-    buttons.forEach(function(btn) {
-        btn.classList.remove('active');
-    });
+    // Show target section
+    const section = document.getElementById(id);
+    if (section) {
+        section.style.display = 'block';
+        // Re-trigger animation
+        section.style.animation = 'none';
+        section.offsetHeight; // reflow
+        section.style.animation = '';
+    }
+    // Activate button
+    const btn = document.getElementById(id + '-btn');
+    if (btn) btn.classList.add('active');
 
-    // Afficher la section choisie
-    document.getElementById(sectionId).style.display = "block";
-    
-    // Activer le bouton correspondant
-    document.getElementById(sectionId + '-btn').classList.add('active');
-
-    // Animation smooth scroll vers le haut
+    // Scroll to top smoothly
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Animate skill bars if About section
+    if (id === 'about') animateSkillBars();
 }
 
-// Fonction pour afficher les solutions dynamiques avec animations
+// ─── SKILL BAR ANIMATION ───
+function animateSkillBars() {
+    document.querySelectorAll('.skill-fill').forEach(bar => {
+        const target = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => { bar.style.width = target; }, 100);
+    });
+}
+
+// ─── SOLUTIONS ───
 function showSolution(type) {
-    let content = document.getElementById("solution-content");
-    
-    // Animation de transition
-    content.style.opacity = "0";
-    setTimeout(function() {
-        
-        if (type === "ecommerce") {
-            content.innerHTML = `
-                <h3> 电子商务解决方案 E-Commerce Solutions</h3>
-                <p><strong>挑战 Challenge:</strong> Limited access to global markets for Cameroonian small businesses and entrepreneurs.</p>
-                <p><strong>解决方案 Solution:</strong> China's advanced e-commerce platforms like Alibaba, Taobao, 
-                JD.com, and digital payment systems (Alipay, WeChat Pay) provide excellent models. 
-                These systems can help African businesses sell products online, reach international markets, 
-                and process payments efficiently through mobile technology.</p>
-                <p><strong>影响 Impact:</strong> Increased revenue for local businesses, job creation, economic growth 
-                through digital trade, and integration into global value chains.</p>
-                <p><strong>关键技术 Key Technologies:</strong> Online marketplaces, mobile payments, supply chain management, 
-                cross-border logistics, QR code payments, live-streaming e-commerce.</p>
-                <p><strong>中国经验 Chinese Experience:</strong> China's success in rural e-commerce (Taobao Villages) 
-                and live-streaming sales can be adapted to African contexts to empower rural entrepreneurs.</p>
-            `;
-        }
-        else if (type === "education") {
-            content.innerHTML = `
-                <h3> 在线教育平台 Online Education Platforms</h3>
-                <p><strong>挑战 Challenge:</strong> Limited access to quality education and technical training 
-                in rural African areas, shortage of qualified teachers, and expensive traditional education.</p>
-                <p><strong>解决方案 Solution:</strong> Digital learning platforms modeled after successful Chinese 
-                systems like DingTalk Education, Xueersi, and MOOC platforms can provide:
-                - Remote learning opportunities
-                - Affordable skill development programs
-                - Teacher training and certification
-                - Interactive learning tools with AI tutors</p>
-                <p><strong>影响 Impact:</strong> Better educational outcomes, reduced skills gap, increased 
-                employment opportunities for African youth, and democratization of quality education.</p>
-                <p><strong>关键技术 Key Technologies:</strong> Learning Management Systems (LMS), video conferencing 
-                (like Tencent Meeting), mobile learning apps, AI-powered tutoring, virtual classrooms, 
-                gamified learning.</p>
-                <p><strong>个人经验 Personal Experience:</strong> As an international student in China, I have 
-                experienced firsthand how digital tools enhance learning. I want to bring these innovations 
-                back to Cameroon.</p>
-            `;
-        }
-        else if (type === "business") {
-            content.innerHTML = `
-                <h3> 小企业技术 Small Business Technology</h3>
-                <p><strong>挑战 Challenge:</strong> Many small businesses in Cameroon lack basic digital tools 
-                for operations, financial management, and growth. Manual processes limit efficiency and scalability.</p>
-                <p><strong>解决方案 Solution:</strong> Basic but powerful software tools including:
-                - Digital payment systems (mobile money integration)
-                - Inventory management software
-                - Customer relationship management (CRM) tools
-                - Cloud-based accounting software
-                - Digital marketing tools (social media, WhatsApp Business)
-                - Point-of-sale (POS) systems</p>
-                <p><strong>影响 Impact:</strong> Improved business efficiency, better financial management, 
-                data-driven decision making, increased competitiveness in the digital economy, and easier 
-                access to business financing through digital records.</p>
-                <p><strong>关键技术 Key Technologies:</strong> Cloud computing, mobile applications, business 
-                analytics, digital marketing automation, WeChat mini-programs concept adapted for African markets.</p>
-                <p><strong>中国模式 Chinese Model:</strong> China's WeChat ecosystem demonstrates how a single 
-                platform can integrate payments, marketing, customer service, and operations – a model 
-                that could be adapted for African SMEs.</p>
-            `;
-        }
-        else if (type === "agriculture") {
-            content.innerHTML = `
-                <h3> 智慧农业 Smart Agriculture Technology</h3>
-                <p><strong>挑战 Challenge:</strong> Traditional farming methods in Cameroon result in low productivity, 
-                crop losses, and limited market access for farmers. Climate change adds additional uncertainties.</p>
-                <p><strong>解决方案 Solution:</strong> Smart agriculture technologies inspired by Chinese innovations:
-                - IoT sensors for soil moisture, temperature, and crop health monitoring
-                - Mobile apps providing weather forecasts and farming advice
-                - Drone technology for crop monitoring and precision spraying
-                - E-commerce platforms connecting farmers directly to buyers
-                - Cold chain logistics to reduce post-harvest losses</p>
-                <p><strong>影响 Impact:</strong> Increased crop yields, reduced losses, better farmer incomes, 
-                sustainable farming practices, and improved food security.</p>
-                <p><strong>关键技术 Key Technologies:</strong> Internet of Things (IoT), mobile applications, 
-                big data analytics, drone technology, satellite imagery, AI-powered disease detection.</p>
-                <p><strong>个人联系 Personal Connection:</strong> Studying at an agricultural vocational college 
-                has given me unique insights into how technology can transform farming. I've witnessed China's 
-                agricultural modernization and believe similar innovations can benefit Cameroon's agricultural 
-                sector, which employs over 60% of the population.</p>
-                <p><strong>中国实践 Chinese Practice:</strong> China's success in using Pinduoduo (拼多多) for 
-                agricultural e-commerce and direct farm-to-consumer sales provides an excellent model for 
-                reducing intermediaries and increasing farmer profits in Africa.</p>
-            `;
-        }
-        
-        content.style.opacity = "1";
-    }, 300);
+    const content = document.getElementById('solution-content');
+
+    // Fade out
+    content.style.opacity = '0';
+    content.style.transition = 'opacity 0.3s';
+
+    // Remove active state from all sol-btn
+    document.querySelectorAll('.sol-btn').forEach(b => b.style.background = '');
+
+    setTimeout(function () {
+        const solutions = {
+            ecommerce: {
+                icon: '🛒',
+                title: 'E-Commerce Solutions',
+                cn: '电子商务解决方案',
+                borderColor: '#f59e0b',
+                paragraphs: [
+                    '<strong>Challenge:</strong> Small businesses and entrepreneurs in Cameroon have limited access to global markets and digital payment infrastructure.',
+                    '<strong>Chinese Model:</strong> Platforms like Alibaba, Taobao, JD.com, and Pinduoduo demonstrate how e-commerce can empower rural producers and connect them directly to buyers — eliminating costly intermediaries. WeChat Pay and Alipay show how mobile payments can become universal.',
+                    '<strong>Proposed Application:</strong> Adapting China\'s "Taobao Village" concept and live-streaming e-commerce to African markets could help Cameroonian SMEs reach regional and international buyers through smartphone-based platforms.',
+                    '<strong>Key Technologies:</strong> Mobile payment systems, digital marketplace platforms, QR code commerce, supply chain management, cross-border logistics.'
+                ]
+            },
+            education: {
+                icon: '📚',
+                title: 'Online Education Platforms',
+                cn: '在线教育平台',
+                borderColor: '#3b82f6',
+                paragraphs: [
+                    '<strong>Challenge:</strong> Rural areas in Cameroon face a shortage of qualified teachers, expensive education, and poor digital infrastructure — limiting access to quality learning.',
+                    '<strong>Chinese Model:</strong> China\'s rapid deployment of educational technology — from DingTalk Education to MOOC platforms and AI-assisted tutoring — has democratised access to quality learning, especially during and after the pandemic.',
+                    '<strong>Proposed Application:</strong> Lightweight mobile-first learning apps that work on low-bandwidth networks, modelled on Chinese EdTech, could deliver vocational training and digital literacy programmes to Cameroonian youth at scale.',
+                    '<strong>Key Technologies:</strong> Mobile LMS (Learning Management Systems), offline-capable apps, video compression for low bandwidth, AI tutoring tools, multilingual content (French, English, local languages).'
+                ]
+            },
+            business: {
+                icon: '💼',
+                title: 'Small Business Technology',
+                cn: '小企业数字化',
+                borderColor: '#10b981',
+                paragraphs: [
+                    '<strong>Challenge:</strong> The vast majority of businesses in Cameroon operate manually, with no digital records, no online presence, and no access to formal finance — limiting their growth potential.',
+                    '<strong>Chinese Model:</strong> China\'s WeChat ecosystem shows how a single super-app can integrate payments, marketing, customer service, and supply chain management — giving even micro-businesses access to digital tools.',
+                    '<strong>Proposed Application:</strong> Simple, low-cost digital tools (inventory management, mobile invoicing, basic CRM, QR code menus) adapted for Cameroonian SMEs. Integration with existing mobile money systems (Orange Money, MTN MoMo).',
+                    '<strong>Key Technologies:</strong> Cloud-based accounting software, mobile POS systems, WhatsApp Business integration, digital marketing tools, data analytics dashboards.'
+                ]
+            },
+            agriculture: {
+                icon: '🌱',
+                title: 'Smart Agriculture Technology',
+                cn: '智慧农业技术',
+                borderColor: '#059669',
+                paragraphs: [
+                    '<strong>Challenge:</strong> Over 60% of Cameroon\'s population works in agriculture, yet productivity is low due to traditional methods, post-harvest losses, and limited market access. Climate change adds additional uncertainty.',
+                    '<strong>Personal Connection:</strong> Studying at an agricultural vocational college (JSAHVC) gave me unique insight into how technology transforms farming. China\'s agricultural modernisation — from drone crop-spraying to Pinduoduo\'s farm-to-consumer e-commerce — is a direct and applicable model.',
+                    '<strong>Proposed Application:</strong> IoT-based soil and weather monitoring for smallholders. Mobile apps providing crop disease detection via smartphone camera (AI-powered). Direct farm-to-buyer platforms eliminating middlemen and improving farmer incomes.',
+                    '<strong>Key Technologies:</strong> IoT sensors, satellite imagery for crop monitoring, AI-powered mobile disease detection, e-commerce platforms for agricultural produce, cold chain logistics solutions.'
+                ]
+            }
+        };
+
+        const sol = solutions[type];
+        if (!sol) return;
+
+        content.style.borderLeftColor = sol.borderColor;
+        content.innerHTML = `
+            <h3>${sol.icon} ${sol.title} <span style="color:#64748b;font-size:.8em;font-family:'Microsoft YaHei',sans-serif"> · ${sol.cn}</span></h3>
+            ${sol.paragraphs.map(p => `<p>${p}</p>`).join('')}
+        `;
+
+        // Fade in
+        content.style.opacity = '1';
+    }, 280);
 }
 
-// Fonction pour soumettre le formulaire de contact
+// ─── CONTACT FORM ───
 function submitForm(event) {
     event.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const resp    = document.getElementById('form-response');
 
-    let responseDiv = document.getElementById("form-response");
-    
-    // Animation de soumission
-    responseDiv.innerHTML = " 正在发送您的消息... Sending your message...";
-    responseDiv.className = "form-response";
-    responseDiv.style.display = "block";
+    if (!name || !email || !message) {
+        resp.innerHTML = '⚠️ Please fill in all required fields.';
+        resp.className = 'form-response';
+        resp.style.background = '#fef3c7';
+        resp.style.color = '#92400e';
+        resp.style.border = '2px solid #f59e0b';
+        resp.style.display = 'block';
+        return;
+    }
 
-    // Simuler un délai d'envoi
-    setTimeout(function() {
-        responseDiv.innerHTML = `
-            ✅ <strong>谢谢 Thank you, ${name}!</strong><br>
-            您的消息已收到。我会尽快回复您的邮箱 <strong>${email}</strong>！<br>
-            Your message has been received. I will get back to you soon!
+    // Sending state
+    resp.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending message...';
+    resp.className = 'form-response';
+    resp.style.background = '#eff6ff';
+    resp.style.color = '#1e40af';
+    resp.style.border = '2px solid #3b82f6';
+    resp.style.display = 'block';
+
+    // Simulate send (in a real project, this would POST to a backend)
+    setTimeout(function () {
+        resp.innerHTML = `
+            ✅ <strong>Thank you, ${name}!</strong><br>
+            Your message has been received. I will reply to 
+            <strong>${email}</strong> as soon as possible. 谢谢！
         `;
-        responseDiv.classList.add('success');
-        
-        // Réinitialiser le formulaire
-        document.getElementById("contact-form").reset();
-    }, 1500);
+        resp.className = 'form-response success';
+        resp.style.background = '';
+        resp.style.color = '';
+        resp.style.border = '';
+        document.getElementById('contact-form').reset();
+    }, 1600);
 }
 
-// Effet de défilement smooth pour les ancres
+// ─── ACTIVE NAV ON SCROLL (optional enhancement) ───
+// Highlight nav button based on visible section when scrolling within page
+// (not needed here as sections toggle visibility, but kept for future use)
+
+// ─── SMOOTH ANCHOR LINKS ───
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
